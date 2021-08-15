@@ -1,0 +1,21 @@
+<div>
+  <div class="wrapper">
+    <div *ngFor="let product of products">
+      <div class="center">
+        <div class="property-card">
+          <a routerLink="/detail/{{product.id}}">
+            <div class="property-image" style="background-image:url('{{product.photo}}')">
+              <div class="property-image-title">
+              </div>
+            </div></a>
+          <div class="property-description">
+            <h5> {{product.productName}}</h5>
+            <p>Vendor code: {{product.vendorCode}}</p>
+            <p>Amount remain: {{product.amountRemain}} {{product.typeRemain}}</p>
+            <p>Price: {{product.price}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
