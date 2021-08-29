@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../product';
+import { ProductService } from '../product.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-product',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddProductComponent implements OnInit {
 
-  constructor() { }
+  product = {
+    productName: '',
+    vendorCode: '',
+    amountRemain: '',
+    typeRemain: '',
+    photo: '',
+    price: ''
+  }
+
+  constructor(private productService: ProductService,
+    private location: Location) { }
 
   ngOnInit(): void {
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  add(): void {
+    this.productService.addProduct(this.product as unknown as Product)
+    .subscribe(() => this.goBack());
   }
 
 }
