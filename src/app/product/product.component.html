@@ -1,30 +1,37 @@
-<div *ngIf="product">
-  <h2>{{product.productName}} Details</h2>
-  <div><span>id: </span>{{product.id}}</div>
-  <div>
-    <label for="product-name">Product name: </label>
-    <input id="product-name" [(ngModel)]="product.productName">
+<div class="product-card" *ngIf="product">
+  <div class="column">
+    <h2>{{product.productName}} Details</h2>
+    <div><span>id: </span>{{product.id}}</div>
+    <div>
+      <label for="product-name">Product name: </label>
+      <input id="product-name" [(ngModel)]="product.productName">
+    </div>
+    <div>
+      <label for="product-vendor-code">Vendor code: </label>
+      <input id="product-vendor-code" [(ngModel)]="product.vendorCode">
+    </div>
+    <div>
+      <label for="product-amount-remain">Amount remain: </label>
+      <input id="product-amount-remain" [(ngModel)]="product.amountRemain">
+    </div>
+    <div>
+      <label for="product-type-remain">Type remain: </label>
+      <input id="product-type-remain" [(ngModel)]="product.typeRemain">
+    </div>
+    <div>
+      <label for="product-photo">Photo: </label>
+      <input id="product-photo" [(ngModel)]="product.photo">
+    </div>
+    <div>
+      <label for="product-price">Price: </label>
+      <input id="product-price" [(ngModel)]="product.price">
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
   </div>
-  <div>
-    <label for="product-vendor-code">Vendor code: </label>
-    <input id="product-vendor-code" [(ngModel)]="product.vendorCode">
+  <div class="column">
+    <div class="product-image" style="background-image:url('{{product.photo}}')">
+    </div>
   </div>
-  <div>
-    <label for="product-amount-remain">Amount remain: </label>
-    <input id="product-amount-remain" [(ngModel)]="product.amountRemain">
-  </div>
-  <div>
-    <label for="product-type-remain">Type remain: </label>
-    <input id="product-type-remain" [(ngModel)]="product.typeRemain">
-  </div>
-  <div>
-    <label for="product-photo">Photo: </label>
-    <input id="product-photo" [(ngModel)]="product.photo">
-  </div>
-  <div>
-    <label for="product-price">Price: </label>
-    <input id="product-price" [(ngModel)]="product.price">
-  </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  
 </div>
