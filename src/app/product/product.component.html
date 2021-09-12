@@ -1,7 +1,7 @@
 <div class="product-card" *ngIf="product">
   <div class="column">
-    <h2>{{product.productName}} Details</h2>
-    <div><span>id: </span>{{product.id}}</div>
+    <h2 class="product-header">{{product.productName}} Details</h2>
+    <div style="text-align: center;"><span>id: </span>{{product.id}}</div>
     <div>
       <label for="product-name">Product name: </label>
       <input id="product-name" [(ngModel)]="product.productName">
@@ -26,8 +26,11 @@
       <label for="product-price">Price: </label>
       <input id="product-price" [(ngModel)]="product.price">
     </div>
-    <button (click)="goBack()">go back</button>
-    <button (click)="save()">save</button>
+    <div class="buttons-block">
+      <button class="button" (click)="goBack()">Go back</button>
+      <button class="button" (click)="save()">Save</button>
+      <button class="button" (click)="delete()">Delete</button>
+    </div>
   </div>
   <div class="column">
     <div class="product-image" style="background-image:url('{{product.photo}}')">

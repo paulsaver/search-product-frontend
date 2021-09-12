@@ -31,6 +31,13 @@ export class ProductComponent implements OnInit {
     this.location.back();
   }
 
+  delete(): void {
+    if (this.product) {
+      this.productService.deleteProduct(this.product.id)
+        .subscribe(() => this.goBack());
+    }
+  }
+
   save(): void {
     if (this.product) {
       this.productService.updateProduct(this.product)

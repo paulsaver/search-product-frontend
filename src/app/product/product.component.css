@@ -1,3 +1,7 @@
+.product-header {
+    text-align: center;
+}
+
 .product-card {
     display: flex;
     margin: auto;
@@ -24,6 +28,7 @@
     padding-bottom: 0.25em;
     margin-top: 0.25em;
     margin-bottom: 0.25em;
+    background-color: lightgray;
 }
 
 .column {
@@ -36,4 +41,27 @@
 	position: relative;
 	height: 100%;
 	width: 100%;
+}
+
+.buttons-block {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.button {
+    height: auto;
+    border: lightgray 2px solid;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: white;
+    color: black;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: lightgray;
 }
