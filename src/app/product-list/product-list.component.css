@@ -152,6 +152,24 @@ opacity:1;
   width: 35px;
 }
 
+.add-ico {
+  top: 8em;
+  left: 6em;
+  position: absolute;
+  background: url(../../assets/icons/add.svg) no-repeat center;
+  background-size: 75%;
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.add-ico:hover {
+  background-color: white;
+  filter: invert(100%);
+}
+
 .button {
   position:absolute;
   right:1em;
