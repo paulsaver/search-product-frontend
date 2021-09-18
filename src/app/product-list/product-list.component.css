@@ -97,21 +97,6 @@ p
   text-align:center;
 }
 
-/* Social Icons */
-
-.property-social-icons
-{
-  width:1em;
-  height:1em;
-  background-color:black;
-  position:absolute;
-  bottom:1em;
-  left:1em;
-  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
 /* Property Cards Hover States */
 
 .property-card:hover .property-description
@@ -131,7 +116,7 @@ p
 
 .property-card:hover .property-social-icons:hover
 {
-  background-color:blue;
+  
   cursor:pointer;
 }
 
@@ -158,4 +143,30 @@ opacity:1;
 
 .nav-element {
   margin: 10px;
+}
+
+.delete-ico {
+  background: url(../../assets/icons/trash.svg) no-repeat center;
+  background-size: 65%;
+  height: 35px;
+  width: 35px;
+}
+
+.button {
+  position:absolute;
+  right:1em;
+  top:1em;
+  border: none;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: white;
+  filter: invert(100%);
 }
