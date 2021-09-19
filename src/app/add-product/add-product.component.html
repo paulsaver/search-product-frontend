@@ -1,28 +1,39 @@
-<div>
-    <div>
+<div class="product-card">
+    <div class="column">
+      <h2 class="product-header">New product</h2>
+      <div>
         <label for="product-name">Product name: </label>
         <input id="product-name" [(ngModel)]="product.productName">
-    </div>
-    <div>
+      </div>
+      <div>
         <label for="product-vendor-code">Vendor code: </label>
         <input id="product-vendor-code" [(ngModel)]="product.vendorCode">
-    </div>
-    <div>
+      </div>
+      <div>
         <label for="product-amount-remain">Amount remain: </label>
         <input id="product-amount-remain" [(ngModel)]="product.amountRemain">
-    </div>
-    <div>
+      </div>
+      <div>
         <label for="product-type-remain">Type remain: </label>
         <input id="product-type-remain" [(ngModel)]="product.typeRemain">
-    </div>
-    <div>
+      </div>
+      <div>
         <label for="product-photo">Photo: </label>
         <input id="product-photo" [(ngModel)]="product.photo">
-    </div>
-    <div>
+      </div>
+      <div>
         <label for="product-price">Price: </label>
         <input id="product-price" [(ngModel)]="product.price">
+      </div>
+      <div class="buttons-block">
+        <button class="button back-ico" (click)="goBack()"></button>
+        <button class="button save-ico" (click)="add()"></button>
+      </div>
     </div>
-    <button (click)="goBack()">go back</button>
-    <button (click)="add()">create</button>
-</div>
+    <div class="column">
+      <div class="product-image" style="background-image:url('{{product.photo}}')">
+      </div>
+    </div>
+    
+  </div>
+  
