@@ -19,7 +19,10 @@
       </div>
       <div>
         <label for="product-photo">Photo: </label>
-        <input id="product-photo" [(ngModel)]="product.photo">
+        <input #imageInput 
+          accept="image/*" 
+          (change)="processFile(imageInput)" 
+          type="file" id="product-photo">
       </div>
       <div>
         <label for="product-price">Price: </label>
@@ -30,8 +33,9 @@
         <button class="button save-ico" (click)="add()"></button>
       </div>
     </div>
+    <!-- TODO: style this input -->
     <div class="column">
-      <div class="product-image" style="background-image:url('{{product.photo}}')">
+      <div *ngIf="selectedImage" class="product-image" style="background-image:url('{{selectedImage.src}}')">
       </div>
     </div>
     

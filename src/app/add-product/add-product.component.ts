@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 import { Location } from '@angular/common';
+import { ImageSnippet } from '../image-snippet';
 
 @Component({
   selector: 'app-add-product',
@@ -17,12 +18,26 @@ export class AddProductComponent implements OnInit {
     typeRemain: '',
     photo: '',
     price: ''
-  }
+  };
+
+  selectedImage?: ImageSnippet;
 
   constructor(private productService: ProductService,
     private location: Location) { }
 
   ngOnInit(): void {
+  }
+
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event: any) => {
+
+      this.selectedImage = new ImageSnippet(event.target.result, file);
+    });
+
+    reader.readAsDataURL(file);
   }
 
   goBack(): void {
