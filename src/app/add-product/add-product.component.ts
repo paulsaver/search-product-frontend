@@ -33,7 +33,6 @@ export class AddProductComponent implements OnInit {
     const reader = new FileReader();
 
     reader.addEventListener('load', (event: any) => {
-
       this.selectedImage = new ImageSnippet(event.target.result, file);
     });
 
@@ -45,6 +44,9 @@ export class AddProductComponent implements OnInit {
   }
 
   add(): void {
+    if (this.selectedImage) {
+      this.product.photo = this.selectedImage?.src;
+    }
     this.productService.addProduct(this.product as unknown as Product)
     .subscribe(() => this.goBack());
   }
